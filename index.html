@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Rishita Joshi</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+      @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+      @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/tailwind.js"></script>
+  </head>
+  <body>
+    <div id="portfolio">
+      <div class="min-h-screen bg-gray-950 text-gray-100 font-sans">
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between px-10 py-5 md:py-4 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800 shadow-lg shadow-primary-900/20"
+        >
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl font-bold tracking-tighter">
+              Portfolio
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-purple-600"
+                >.</span
+              >
+            </span>
+          </div>
+
+          <nav class="hidden md:flex items-center space-x-10">
+            <a
+              href="#about"
+              class="hover:text-primary-400 transition-colors duration-300"
+              >About</a
+            >
+            <a
+              href="#work"
+              class="hover:text-primary-400 transition-colors duration-300"
+              >Work</a
+            >
+            <a
+              href="#skills"
+              class="hover:text-primary-400 transition-colors duration-300"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="px-6 py-3 cursor-pointer block rounded-full bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium hover:shadow-lg transform hover:-translate-y-1 transition duration-300"
+            >
+              Say Hi 👋
+            </a>
+          </nav>
+
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </header>
+
+        <div class="fixed w-[100vw] md:hidden z-40">
+          <div
+            id="mobile-menu"
+            class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out absolute w-full bg-gray-900/90 backdrop-blur-sm text-white space-y-4 px-10 py-6 border-t border-gray-800 shadow-lg shadow-primary-900/30 rounded-b-xl"
+          >
+            <a
+              href="#about"
+              class="block hover:text-primary-400 transition-colors duration-300"
+              >About</a
+            >
+            <a
+              href="#work"
+              class="block hover:text-primary-400 transition-colors duration-300"
+              >Work</a
+            >
+            <a
+              href="#skills"
+              class="block hover:text-primary-400 transition-colors duration-300"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="block text-center px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium hover:shadow-lg transform hover:-translate-y-1 transition duration-300"
+            >
+              Say Hi 👋
+            </a>
+          </div>
+        </div>
+
+        <script>
+          const button = document.getElementById("mobile-menu-button");
+          const menu = document.getElementById("mobile-menu");
+
+          let isOpen = false;
+
+          button.addEventListener("click", () => {
+            isOpen = !isOpen;
+
+            if (isOpen) {
+              menu.classList.remove("max-h-0", "opacity-0");
+              menu.classList.add("max-h-[500px]", "opacity-100");
+            } else {
+              menu.classList.remove("max-h-[500px]", "opacity-100");
+              menu.classList.add("max-h-0", "opacity-0");
+            }
+          });
+        </script>
+
+        <section
+          id="home"
+          class="pt-20 pb-32 lg:h-[90vh] relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(79,70,229,0.3),transparent_60%)]"
+          ></div>
+          <div
+            class="absolute top-40 right-20 w-72 h-72 bg-primary-500/20 rounded-full blur-[100px] -z-10"
+          ></div>
+          <div
+            class="absolute bottom-20 left-20 w-60 h-60 bg-purple-500/20 rounded-full blur-[100px] -z-10"
+          ></div>
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="space-y-6 max-w-2xl">
+                <div
+                  class="inline-block px-3 py-1 rounded-full bg-gray-900 border border-gray-800 text-primary-400 text-sm font-medium shadow-lg shadow-primary-900/10"
+                >
+                  Software Developer
+                </div>
+                <h1
+                  class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                >
+                  Hi, I'm
+                  <span
+                    class="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+                    >Rishita Joshi</span
+                  >
+                </h1>
+                <h3 class="text-2xl font-bold">
+                  <span id="typewriter" class="ml-2 text-white"></span>
+                </h3>
+                <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+                <script>
+                  const app = document.getElementById("typewriter");
+
+                  const typewriter = new Typewriter(app, {
+                    loop: true,
+                    delay: 75,
+                    deleteSpeed: 50,
+                  });
+
+                  typewriter
+                    .typeString("Software Developer")
+                    .pauseFor(1500)
+                    .deleteAll()
+                    .typeString("Web Developer")
+                    .pauseFor(1500)
+                    .deleteAll()
+                    .start();
+                </script>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                  I'm a passionate software developer specializing in creating
+                  beautiful, functional, and user-friendly applications with
+                  clean code and modern technologies.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                  <a
+                    href="#work"
+                    class="bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-500 hover:to-purple-500 px-6 py-3 rounded-full text-white font-medium shadow-lg shadow-primary-900/30 hover:shadow-xl hover:shadow-primary-500/40 hover:-translate-y-0.5 transition-all duration-300 border border-primary-500/20"
+                  >
+                    View Projects
+                  </a>
+                  <a
+                    href="./assets/resume.pdf"
+                    target="_blank"
+                    class="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-primary-500/50 px-6 py-3 rounded-full text-white font-medium transition-all hover:-translate-y-0.5 duration-300 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-primary-900/20"
+                  >
+                    Download Resume
+                  </a>
+                </div>
+              </div>
+              <div class="relative flex justify-center">
+                <div
+                  class="bg-gray-900 border border-gray-800 rounded-full h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 overflow-hidden shadow-xl shadow-primary-900/30 group hover:shadow-2xl hover:shadow-primary-600/30 transition-all duration-500"
+                >
+                  <img
+                    src="./assets/me.jpeg"
+                    alt="Developer profile"
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    keywords="developer, programmer, coder, professional, portrait"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-4 -right-4 bg-gray-900 border border-gray-800 rounded-lg p-3 shadow-lg hover:shadow-primary-900/30 hover:border-primary-500/50 transition-all duration-300"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="flex h-3 w-3 relative">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"
+                      ></span>
+                      <span
+                        class="relative inline-flex rounded-full h-3 w-3 bg-primary-500 shadow-[0_0_10px_rgba(99,102,241,0.7)]"
+                      ></span>
+                    </span>
+                    <span class="text-gray-300">Available for work</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+          >
+            <a href="#about" class="cursor-pointer">
+              <span class="material-symbols-outlined text-3xl"
+                >expand_more</span
+              >
+            </a>
+          </div>
+        </section>
+        <section
+          id="about"
+          class="about-section py-20 bg-gray-950 relative overflow-hidden"
+        >
+          <div
+            class="about-glow absolute top-0 left-1/4 w-64 h-64 bg-primary-700/20 rounded-full blur-[120px] -z-10"
+          ></div>
+
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 reveal-fade-up">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.3)]"
+              >
+                About Me
+              </h2>
+              <div
+                class="h-1 w-20 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+              ></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="relative reveal-left">
+                <div
+                  class="bg-gray-900 rounded-lg p-1 shadow-xl shadow-black/50 group hover:shadow-primary-900/30 transition-all duration-500"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=1170&q=80"
+                    alt="Working on code"
+                    class="rounded-lg w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-6 -right-6 bg-gray-950 p-4 rounded-lg border border-gray-800 shadow-xl shadow-black/40 hover:shadow-primary-900/30 hover:border-primary-600/50 transition-all duration-300 hidden md:block"
+                >
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="material-symbols-outlined text-primary-500 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]"
+                      >code</span
+                    >
+                    <div class="text-sm">
+                      <div class="text-gray-400">Total Projects</div>
+                      <div class="text-xl font-bold">5+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-6 reveal-right">
+                <p class="text-gray-300 leading-relaxed">
+                  <span class="text-2xl font-bold">I</span> am a passionate web
+                  developer skilled in MERN stack, ReactJS, MySQL, and
+                  proficient in languages like C, C++, Java (basic), and Python.
+                  With a strong focus on building dynamic and user-friendly
+                  applications, I enjoy solving complex problems, optimizing
+                  performance, and continuously learning new technologies.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                  My strengths lie in teamwork and adaptability, allowing me to
+                  collaborate effectively and tackle challenges with a creative
+                  mindset. Beyond coding, I have a keen interest in dancing and
+                  cooking. I strive to create innovative solutions that make a
+                  meaningful impact.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                  <div
+                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 hover:border-primary-500 transition-colors shadow-lg shadow-black/30 hover:shadow-primary-900/20 group"
+                  >
+                    <div class="flex items-center gap-3 mb-2">
+                      <span
+                        class="material-symbols-outlined text-primary-500 group-hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.7)] transition-all duration-300"
+                        >school</span
+                      >
+                      <h4 class="font-medium">Education</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                      Computer Science and Engineering from SISTec Ratibad
+                    </p>
+                  </div>
+                  <div
+                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 hover:border-primary-500 transition-colors shadow-lg shadow-black/30 hover:shadow-primary-900/20 group"
+                  >
+                    <div class="flex items-center gap-3 mb-2">
+                      <span
+                        class="material-symbols-outlined text-primary-500 group-hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.7)] transition-all duration-300"
+                        >location_on</span
+                      >
+                      <h4 class="font-medium">Location</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">Bhopal, Madhya Pradesh</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const revealElements = document.querySelectorAll(
+              ".reveal-left, .reveal-right, .reveal-fade-up"
+            );
+
+            const revealOnScroll = () => {
+              const windowHeight = window.innerHeight;
+              revealElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight - 100) {
+                  el.classList.add(
+                    "opacity-100",
+                    "translate-x-0",
+                    "translate-y-0"
+                  );
+                }
+              });
+            };
+
+            revealElements.forEach((el) => {
+              el.classList.add("opacity-0", "transition-all", "duration-1000");
+              if (el.classList.contains("reveal-left")) {
+                el.classList.add("-translate-x-10");
+              }
+              if (el.classList.contains("reveal-right")) {
+                el.classList.add("translate-x-10");
+              }
+              if (el.classList.contains("reveal-fade-up")) {
+                el.classList.add("translate-y-10");
+              }
+            });
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+          });
+        </script>
+
+        <section id="skills" class="py-20 bg-gray-900 relative">
+          <div
+            class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-700/20 rounded-full blur-[150px] -z-10"
+          ></div>
+
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 reveal-up">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.3)]"
+              >
+                My Skills
+              </h2>
+              <div
+                class="h-1 w-20 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+              ></div>
+              <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Here are some of my key skills and proficiencies.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-gray-950 rounded-xl p-6 border border-gray-800 hover:border-primary-500 transition-all duration-300 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-primary-900/30 hover:-translate-y-1 reveal-up"
+              >
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-primary-500 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]"
+                    >code</span
+                  >
+                  Frontend Development
+                </h3>
+                <div class="space-y-4">
+                  <div class="skill-bar" data-skill="95%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">HTML/CSS</span>
+                      <span class="text-gray-400">95%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="90%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">JavaScript</span>
+                      <span class="text-gray-400">90%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="85%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">React</span>
+                      <span class="text-gray-400">85%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="90%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">Tailwind CSS</span>
+                      <span class="text-gray-400">90%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-950 rounded-xl p-6 border border-gray-800 hover:border-primary-500 transition-all duration-300 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-primary-900/30 hover:-translate-y-1 reveal-up"
+              >
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-primary-500 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]"
+                    >dns</span
+                  >
+                  Backend Development
+                </h3>
+                <div class="space-y-4">
+                  <div class="skill-bar" data-skill="80%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">Python</span>
+                      <span class="text-gray-400">80%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="75%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">Java</span>
+                      <span class="text-gray-400">75%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="70%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">C/C++</span>
+                      <span class="text-gray-400">70%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="85%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">Databases (SQL/NoSQL)</span>
+                      <span class="text-gray-400">85%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-950 rounded-xl p-6 border border-gray-800 hover:border-primary-500 transition-all duration-300 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-primary-900/30 hover:-translate-y-1 reveal-up"
+              >
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-primary-500 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]"
+                    >terminal</span
+                  >
+                  Other Skills
+                </h3>
+                <div class="space-y-4">
+                  <div class="skill-bar" data-skill="75%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">Git/Github</span>
+                      <span class="text-gray-400">75%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar" data-skill="80%">
+                    <div class="flex justify-between mb-1">
+                      <span class="text-gray-300">UI/UX Design</span>
+                      <span class="text-gray-400">80%</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner shadow-black/50"
+                    >
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-500 to-purple-500 skill-progress w-0"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("opacity-100", "translate-y-0");
+
+                    entry.target
+                      .querySelectorAll(".skill-bar")
+                      .forEach((bar) => {
+                        const progress = bar.querySelector(".skill-progress");
+                        const width = bar.getAttribute("data-skill");
+                        progress.style.width = width;
+                        progress.style.transition = "width 1.5s ease-in-out";
+                      });
+                  }
+                });
+              },
+              { threshold: 0.2 }
+            );
+
+            document.querySelectorAll(".reveal-up").forEach((el) => {
+              el.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(el);
+            });
+          });
+        </script>
+
+        <!-- <section id="projects" class="py-20 bg-gray-950 relative">
+          <div
+            class="absolute top-20 left-0 w-80 h-80 bg-primary-800/20 rounded-full blur-[120px] -z-10"
+          ></div>
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.3)]"
+              >
+                My Projects
+              </h2>
+              <div
+                class="h-1 w-20 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+              ></div>
+              <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Check out some of my recent projects. Each project represents a
+                unique challenge and solution.
+              </p>
+            </div>
+            
+          </div>
+        </section> -->
+        <section id="work" class="py-20">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal" data-reveal="up">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.3)]"
+              >
+                My Projects
+              </h2>
+              <div
+                class="h-1 w-20 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+              ></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="group bg-black rounded-xl overflow-hidden border border-gray-800 transition-all hover:border-primary-500 reveal"
+                data-reveal="up"
+                data-delay="100"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/one.png"
+                    alt="Connect U"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform"
+                  >
+                    <div class="flex gap-2">
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >ReactJS</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >CSS</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >NodeJS</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Connect U</h3>
+                  <p class="text-gray-400 mb-4">
+                    A web-based solution designed to connect alumni, students,
+                    and faculty of an institution.
+                  </p>
+                  <a
+                    href="https://github.com/joshirishita/ConnectU-main"
+                    class="inline-flex items-center text-primary-500 hover:underline"
+                  >
+                    View Project
+                    <span class="material-symbols-outlined ml-1 text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="group bg-black rounded-xl overflow-hidden border border-gray-800 transition-all hover:border-primary-500 reveal"
+                data-reveal="up"
+                data-delay="200"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/two.png"
+                    alt="Disaster Management App"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform"
+                  >
+                    <div class="flex gap-2">
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >React</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >Flask</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >Python</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">
+                    Disaster Management App
+                  </h3>
+                  <p class="text-gray-400 mb-4">
+                    A digital platform that helps users prepare for, respond to,
+                    and recover from disasters with real-time alerts and
+                    coordination tools.
+                  </p>
+                  <a
+                    href="./soon.html"
+                    class="inline-flex items-center text-primary-500 hover:underline"
+                  >
+                    View Project
+                    <span class="material-symbols-outlined ml-1 text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="group bg-black rounded-xl overflow-hidden border border-gray-800 transition-all hover:border-primary-500 reveal"
+                data-reveal="up"
+                data-delay="300"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/three.png"
+                    alt="BloodLink App"
+                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform"
+                  >
+                    <div class="flex gap-2">
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >React</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >Ionic</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary-500 rounded-full text-xs"
+                        >Flask</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">BloodLink</h3>
+                  <p class="text-gray-400 mb-4">
+                    A mobile+web application that connects blood donors with
+                    recipients, facilitates donation scheduling, and tracks
+                    donation history.
+                  </p>
+                  <a
+                    href="./soon.html"
+                    class="inline-flex items-center text-primary-500 hover:underline"
+                  >
+                    View Project
+                    <span class="material-symbols-outlined ml-1 text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-12 text-center reveal"
+              data-reveal="up"
+              data-delay="400"
+            >
+              <a
+                href="./soon.html"
+                class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full font-medium transition-transform hover:scale-105 text-center"
+              >
+                View All Projects
+                <span class="material-symbols-outlined ml-2"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-900">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-16 contact-reveal-up">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.3)]"
+              >
+                Get In Touch
+              </h2>
+              <div
+                class="h-1 w-20 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+              ></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div class="contact-reveal-left">
+                <div class="mb-8">
+                  <p class="text-gray-300 mb-6">
+                    I'm always open to discussing new projects, creative ideas,
+                    or opportunities to be part of your vision. Feel free to
+                    reach out using the form or through my social media
+                    profiles.
+                  </p>
+                  <div class="space-y-4">
+                    <div class="flex items-center contact-reveal-left-delay1">
+                      <div
+                        class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mr-4"
+                      >
+                        <span class="material-symbols-outlined text-primary-500"
+                          >mail</span
+                        >
+                      </div>
+                      <div>
+                        <h4 class="font-medium">Email</h4>
+                        <p class="text-gray-400">rishitajoshi215@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center contact-reveal-left-delay2">
+                      <div
+                        class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mr-4"
+                      >
+                        <span class="material-symbols-outlined text-primary-500"
+                          >location_on</span
+                        >
+                      </div>
+                      <div>
+                        <h4 class="font-medium">Location</h4>
+                        <p class="text-gray-400">Bhopal, MP</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-4 contact-reveal-left-delay3">
+                  <a
+                    href="https://github.com/joshirishita"
+                    class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-transform hover:scale-110 hover:bg-gray-700"
+                  >
+                    <i class="fa-brands fa-github text-xl"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/rishita-joshi-54128825a/"
+                    class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-transform hover:scale-110 hover:bg-gray-700"
+                  >
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                  </a>
+                  <a
+                    href="mailto:rishitajoshi215@gmail.com"
+                    class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center transition-transform hover:scale-110 hover:bg-gray-700"
+                  >
+                    <i class="fas fa-envelope-open text-xl"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="bg-black p-8 rounded-xl border border-gray-800 contact-reveal-right"
+              >
+                <form>
+                  <div class="mb-6 contact-reveal-right-delay1">
+                    <label for="name" class="block mb-2 text-sm font-medium"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
+                      placeholder="Someone"
+                    />
+                  </div>
+                  <div class="mb-6 contact-reveal-right-delay2">
+                    <label for="email" class="block mb-2 text-sm font-medium"
+                      >Your Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
+                      placeholder="someone@example.com"
+                    />
+                  </div>
+                  <div class="mb-6 contact-reveal-right-delay3">
+                    <label for="subject" class="block mb-2 text-sm font-medium"
+                      >Subject</label
+                    >
+                    <input
+                      type="text"
+                      id="subject"
+                      class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
+                      placeholder="Project Inquiry"
+                    />
+                  </div>
+                  <div class="mb-6 contact-reveal-right-delay4">
+                    <label for="message" class="block mb-2 text-sm font-medium"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg resize-none focus:outline-none focus:border-primary-500 transition-colors"
+                      placeholder="I'd like to discuss..."
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full px-8 py-3 bg-gradient-to-r from-primary-500 to-purple-600 rounded-lg font-medium transition-transform hover:scale-[1.02] contact-reveal-right-delay5"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          const revealConfig = {
+            threshold: 0.1,
+          };
+
+          function revealOnScroll(entries, observer) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-revealed");
+                observer.unobserve(entry.target);
+              }
+            });
+          }
+
+          const observer = new IntersectionObserver(
+            revealOnScroll,
+            revealConfig
+          );
+
+          document
+            .querySelectorAll(
+              ".contact-reveal-left, .contact-reveal-left-delay1, .contact-reveal-left-delay2, .contact-reveal-left-delay3"
+            )
+            .forEach((el, idx) => {
+              el.style.opacity = 0;
+              el.style.transform = "translateX(-50px)";
+              el.style.transition = `all 0.6s ease ${idx * 0.15}s`;
+              observer.observe(el);
+            });
+
+          document
+            .querySelectorAll(
+              ".contact-reveal-right, .contact-reveal-right-delay1, .contact-reveal-right-delay2, .contact-reveal-right-delay3, .contact-reveal-right-delay4, .contact-reveal-right-delay5"
+            )
+            .forEach((el, idx) => {
+              el.style.opacity = 0;
+              el.style.transform = "translateX(50px)";
+              el.style.transition = `all 0.6s ease ${idx * 0.15}s`;
+              observer.observe(el);
+            });
+
+          document.head.insertAdjacentHTML(
+            "beforeend",
+            `
+            <style>
+            .is-revealed {
+              opacity: 1 !important;
+              transform: translateX(0) !important;
+            }
+            </style>
+            `
+          );
+        </script>
+
+        <footer class="bg-black py-8 border-t border-gray-800">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center">
+              <div class="text-center md:text-right">
+                <p class="text-gray-400">© 2025. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      tailwind.config = {
+        content: ["./src/**/*.{html,js}"],
+        theme: {
+          fontFamily: {
+            sans: [
+              "Open Sans",
+              "ui-sans-serif",
+              "system-ui",
+              "sans-serif",
+              '"Apple Color Emoji"',
+              '"Segoe UI Emoji"',
+              '"Segoe UI Symbol"',
+              '"Noto Color Emoji"',
+            ],
+          },
+          extend: {
+            fontFamily: {
+              title: [
+                "Lato",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',
+              ],
+              body: [
+                "Open Sans",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',
+              ],
+            },
+            colors: {
+              neutral: {
+                50: "#f7f7f7",
+                100: "#eeeeee",
+                200: "#e0e0e0",
+                300: "#cacaca",
+                400: "#b1b1b1",
+                500: "#999999",
+                600: "#7f7f7f",
+                700: "#676767",
+                800: "#545454",
+                900: "#464646",
+                950: "#282828",
+              },
+              primary: {
+                50: "#f3f1ff",
+                100: "#e9e5ff",
+                200: "#d5cfff",
+                300: "#b7a9ff",
+                400: "#9478ff",
+                500: "#7341ff",
+                600: "#631bff",
+                700: "#611bf8",
+                800: "#4607d0",
+                900: "#3c08aa",
+                950: "#220174",
+                DEFAULT: "#611bf8",
+              },
+            },
+          },
+          fontSize: {
+            xs: ["12px", { lineHeight: "19.200000000000003px" }],
+            sm: ["14px", { lineHeight: "21px" }],
+            base: ["16px", { lineHeight: "25.6px" }],
+            lg: ["18px", { lineHeight: "27px" }],
+            xl: ["20px", { lineHeight: "28px" }],
+            "2xl": ["24px", { lineHeight: "31.200000000000003px" }],
+            "3xl": ["30px", { lineHeight: "36px" }],
+            "4xl": ["36px", { lineHeight: "41.4px" }],
+            "5xl": ["48px", { lineHeight: "52.800000000000004px" }],
+            "6xl": ["60px", { lineHeight: "66px" }],
+            "7xl": ["72px", { lineHeight: "75.60000000000001px" }],
+            "8xl": ["96px", { lineHeight: "100.80000000000001px" }],
+            "9xl": ["128px", { lineHeight: "134.4px" }],
+          },
+          borderRadius: {
+            none: "0px",
+            sm: "6px",
+            DEFAULT: "12px",
+            md: "18px",
+            lg: "24px",
+            xl: "36px",
+            "2xl": "48px",
+            "3xl": "72px",
+            full: "9999px",
+          },
+          spacing: {
+            0: "0px",
+            1: "4px",
+            2: "8px",
+            3: "12px",
+            4: "16px",
+            5: "20px",
+            6: "24px",
+            7: "28px",
+            8: "32px",
+            9: "36px",
+            10: "40px",
+            11: "44px",
+            12: "48px",
+            14: "56px",
+            16: "64px",
+            20: "80px",
+            24: "96px",
+            28: "112px",
+            32: "128px",
+            36: "144px",
+            40: "160px",
+            44: "176px",
+            48: "192px",
+            52: "208px",
+            56: "224px",
+            60: "240px",
+            64: "256px",
+            72: "288px",
+            80: "320px",
+            96: "384px",
+            px: "1px",
+            0.5: "2px",
+            1.5: "6px",
+            2.5: "10px",
+            3.5: "14px",
+          },
+        },
+        plugins: [],
+        important: "#portfolio",
+      };
+    </script>
+    <script>
+      // ScrollReveal ka part
+      (function () {
+        const reveals = new Set();
+        const config = {
+          root: null,
+          rootMargin: "0px 0px -15% 0px",
+          threshold: 0,
+        };
+
+        function onIntersect(entries, observer) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const delay = el.dataset.delay;
+              if (delay) el.style.transitionDelay = delay + "ms";
+              el.classList.add("is-revealed");
+              observer.unobserve(el);
+            }
+          });
+        }
+
+        const observer = new IntersectionObserver(onIntersect, config);
+
+        function observeReveal(el) {
+          if (!el.classList.contains("reveal")) el.classList.add("reveal");
+          observer.observe(el);
+          reveals.add(el);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const auto = document.querySelectorAll(
+            ".reveal, [data-reveal-section]"
+          );
+          auto.forEach(observeReveal);
+        });
+
+        window.revealHelpers = {
+          observe: observeReveal,
+        };
+      })();
+    </script>
+  </body>
+</html>

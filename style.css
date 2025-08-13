@@ -1,0 +1,53 @@
+* {
+  scroll-behavior: smooth;
+}
+
+#contact {
+  overflow-x: hidden;
+}
+
+/* Scroll reveal ke liye */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal[data-reveal="left"] {
+  transform: translateX(-30px);
+}
+.reveal[data-reveal="right"] {
+  transform: translateX(30px);
+}
+.reveal[data-reveal="up"] {
+  transform: translateY(30px);
+}
+
+.reveal[data-delay] {
+  transition-delay: 0ms;
+}
+
+.reveal .h-full {
+  width: 0 !important;
+  transition: width 1s ease;
+}
+
+.reveal.is-revealed .h-full {
+  width: var(--target-width) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
